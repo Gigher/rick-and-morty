@@ -7,3 +7,7 @@ export interface CustomFilterProps {
     title: string;
     options: string[];
 }
+
+export interface ButtonProps {
+    title: string;
+}

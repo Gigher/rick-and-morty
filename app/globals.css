@@ -1,4 +1,6 @@
-@import-normalize;
+html {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;

@@ -10,6 +10,7 @@ import SearchBar from "@/components/SearchBar";
 import CustomFilter from "@/components/CustomFilter";
 import { fetchCharacters } from "@/utils";
 import { genders, species, statuses } from "@/constants";
+import Button from "@/components/Button";
 
 
 const roboto = Roboto({ weight: ['400', '700'], subsets: ["latin"] });
@@ -91,6 +92,8 @@ export default async function Home() {
             species="Human"
           />
         </div>
+
+        <Button title="LOAD MORE" />
       </div>
 
       

@@ -3,6 +3,9 @@ import React from 'react'
 
 import styles from '../../styles/modules/Locations.module.scss';
 import locationsImg from '../../public/assets/locations-illustration.svg';
+import SearchBar from '@/components/SearchBar';
+import CustomFilter from '@/components/CustomFilter';
+import { dimensions, locationTypes } from '@/constants';
 
 const page = () => {
   return (
@@ -14,13 +17,10 @@ const page = () => {
         alt="Locations illustration"
       />
 
-      <div>
-        <input type="text" />
-        <select name="type" id="type">
-          <option value="type">Type</option>
-          <option value="planet">Planet</option>
-          <option value="space station">Space station</option>
-        </select>
+      <div className={styles.inputsWrapper}>
+        <SearchBar />
+        <CustomFilter title='Types' options={locationTypes} />
+        <CustomFilter title='Dimension' options={dimensions} />
       </div>
     </main>
   )
