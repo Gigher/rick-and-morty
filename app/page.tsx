@@ -1,95 +1,99 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import { Description, Field, Label, Select } from '@headlessui/react';
+import { Roboto } from "next/font/google";
 
-export default function Home() {
+import styles from "../styles/modules/Page.module.scss";
+
+import pageIllustration from '../public/assets/characters-illustration.svg';
+import Card from "@/components/Card";
+import SearchBar from "@/components/SearchBar";
+import CustomFilter from "@/components/CustomFilter";
+import { fetchCharacters } from "@/utils";
+import { genders, species, statuses } from "@/constants";
+
+
+const roboto = Roboto({ weight: ['400', '700'], subsets: ["latin"] });
+
+export default async function Home() {
+  const allCharacters = await fetchCharacters();
+  const allCharactersArray = Object.values(allCharacters);
+
+  console.log(typeof(allCharacters));
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={`${styles.container} ${roboto.className}`}>
+      <div className={styles.contentWrapper}>
+        <Image 
+          src={pageIllustration}
+          alt="Illustration"
+          width={600}
+          height={200}
+        />
+
+        <div className={styles.inputsContainer}>
+          <SearchBar />
+
+          <CustomFilter title="Species" options={species} />
+
+          <CustomFilter title="Gender" options={genders}  />
+
+          <CustomFilter title="Status" options={statuses} />
+        </div>
+        
+        {/* {Array.isArray(allCharacters) && allCharacters.map((character) => <Card imgUrl={character.Img} characterName={character.Name} species={character.Species} />)} */}
+
+        <div className={styles.cards}>
+          <Card
+            imgUrl="../public/assets/rick-placeholder.svg"
+            characterName="Rick Sanchez"
+            species="Human"
+          />
+          
+          <Card
+            imgUrl="../public/assets/rick-placeholder.svg"
+            characterName="Rick Sanchez"
+            species="Human"
+          />
+
+          <Card
+            imgUrl="../public/assets/rick-placeholder.svg"
+            characterName="Rick Sanchez"
+            species="Human"
+          />
+
+          <Card
+            imgUrl="../public/assets/rick-placeholder.svg"
+            characterName="Rick Sanchez"
+            species="Human"
+          />
+
+          <Card
+            imgUrl="../public/assets/rick-placeholder.svg"
+            characterName="Rick Sanchez"
+            species="Human"
+          />
+
+          <Card
+            imgUrl="../public/assets/rick-placeholder.svg"
+            characterName="Rick Sanchez"
+            species="Human"
+          />
+
+          <Card
+            imgUrl="../public/assets/rick-placeholder.svg"
+            characterName="Rick Sanchez"
+            species="Human"
+          />
+
+          <Card
+            imgUrl="../public/assets/rick-placeholder.svg"
+            characterName="Rick Sanchez"
+            species="Human"
+          />
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      
     </main>
   );
 }

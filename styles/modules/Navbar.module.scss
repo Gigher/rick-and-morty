@@ -1,0 +1,55 @@
+@import "../media";
+
+.shadow {
+    box-shadow: -2px 0 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navWrapper {
+    padding: 0 50px;
+}
+
+.nav {
+    padding: 5px 0px 6px;
+    max-width: 1020px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin:0;
+    padding: 0;
+    text-indent: 0;
+    list-style-type: 0;
+    list-style: none;
+    font-weight: 700;
+
+    .navListText {
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+        text-decoration: underline transparent;
+        text-underline-offset: 5px;
+        transition: all ease-out .4s;
+
+        &:hover {
+            text-decoration: underline 2px;
+        }
+
+        &:active {
+            color: #81FA67; // Не работает ;(
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+.navItems {
+}

@@ -1,0 +1,53 @@
+@import "../media";
+
+.container {
+    max-width: 1020px;
+    width: 100%;
+    margin: auto;
+    padding: 26px 0;
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// Inputs
+
+.inputsContainer {
+    padding: 16px 20px 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 20px;
+
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.select {
+    padding: 16px 14px;
+    border: 1px solid rgba($color: #000000, $alpha: 0.38);
+    color: rgba($color: #000000, $alpha: 0.6);
+    border-radius: 8px;
+}
+
+
+// Cards
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    gap: 20px 20px;
+    padding: 61px 0px 44px;
+
+    @include tablet {
+        
+    }
+}

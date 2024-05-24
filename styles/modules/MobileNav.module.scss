@@ -1,0 +1,30 @@
+@import "../media";
+
+.mobileNav {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #DADADA;
+    align-self: center;
+
+    &::before {
+        position: absolute;
+        top: -10px;
+        width: 18px;
+        height: 2px;
+        background-color: #DADADA;
+    }
+
+    &::after {
+        position: absolute;
+        top: 10px;
+        width: 18px;
+        height: 2px;
+        background-color: #DADADA;
+    }
+
+    @include mobile-above {
+        display: none;
+    }
+}
