@@ -1,4 +1,4 @@
-# Rick and Morty
+# 👽 Rick and Morty
 ## Stack:
 - React/Next.js
 - Typescript
