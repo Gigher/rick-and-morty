@@ -4,6 +4,10 @@ export interface SearchNameProps {
     placeholder: string;
 }
 
+export interface SearchBarProps {
+    placeholder: string;
+}
+
 export interface CustomFilterProps {
     title: string;
     options: string[];

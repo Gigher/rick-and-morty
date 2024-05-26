@@ -4,8 +4,9 @@ import { useState } from 'react';
 
 import styles from '../styles/modules/SearchBar.module.scss';
 import SearchName from './SearchName';
+import { SearchBarProps } from '@/types';
 
-const SearchBar = ({ placeholder }) => {
+const SearchBar = ({ placeholder }: SearchBarProps) => {
   const [name, setName] = useState('');
 
   const handleSearch = () => {
