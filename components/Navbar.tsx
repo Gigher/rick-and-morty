@@ -5,6 +5,7 @@ import React from 'react'
 import styles from '../styles/modules/Navbar.module.scss';
 import NavLogo from '../public/assets/logo-nav.svg';
 import MobileNav from './MobileNav';
+import { navLinks } from '@/constants';
 
 const Navbar = () => {
   return (
@@ -21,21 +22,13 @@ const Navbar = () => {
           </Link>
 
           <ul className={styles.navList}>
-            <li className={styles.navItems}>
-              <Link href='/characters' className={styles.navListText}>
-                Characters
-              </Link>
-            </li>
-            <li className={styles.navItems}>
-              <Link href='/locations' className={styles.navListText}>
-                Locations
-              </Link>
-            </li>
-            <li className={styles.navItems}>
-              <Link href='/episodes' className={styles.navListText}>
-                Episodes
-              </Link>
-            </li>
+            {navLinks.map((item) => (
+              <li key={item.label}>
+                <Link href={item.route} className={styles.navListText}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
 
           <MobileNav />

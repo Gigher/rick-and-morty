@@ -6,7 +6,6 @@ import { Roboto } from 'next/font/google';
 
 import styles from '../styles/modules/Card.module.scss';
 import rickImg from '../public/assets/rick-placeholder.svg';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 interface cardTypes {

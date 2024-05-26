@@ -1,9 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import "../mixins";
 
 .button {
     padding: 10px 32.5px;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    font-weight: 500;
     line-height: 114%;
     letter-spacing: 0.09em;
     text-align: center;
@@ -15,11 +17,7 @@
     cursor: pointer;
     transition: all .3s ease-out;
 
-    &:hover {
+    @include hover {
         background-color: #E3F2FD;
-    }
-
-    &:active {
-        background-color: #e0f0fb;
     }
 }

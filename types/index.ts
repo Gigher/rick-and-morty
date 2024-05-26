@@ -1,6 +1,7 @@
 export interface SearchNameProps {
     name: string;
     setName: (name: string) => void;
+    placeholder: string;
 }
 
 export interface CustomFilterProps {
@@ -10,4 +11,12 @@ export interface CustomFilterProps {
 
 export interface ButtonProps {
     title: string;
+}
+
+export interface LocationCardProps {
+    url: string;
+    title: string;
+    type?: string;
+    date?: string;
+    episode?: string;
 }

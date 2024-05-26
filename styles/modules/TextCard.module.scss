@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@import "../media";
+@import "../mixins";
+
+.cardWrapper {
+    width: 240px;
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all .3s ease-out;
+
+    @include hover {
+        background-color: #dedede;
+    }
+
+    @include mobile-s {
+        margin: 0 24px;
+        width: 100%;
+    }
+}
+
+.cardTitle {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.cardSubtitle {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.cardEpisode {
+    margin: 0;
+    padding-top: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+}

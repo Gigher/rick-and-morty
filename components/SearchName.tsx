@@ -9,7 +9,7 @@ import { SearchNameProps } from '@/types';
 import searchImg from '../public/assets/icons/search.svg'
 import styles from '../styles/modules/SearchName.module.scss';
 
-const SearchName = ({ name, setName }: SearchNameProps) => {
+const SearchName = ({ name, setName, placeholder }: SearchNameProps) => {
     const [query, setQuery] = useState('');
 
     const filteredCharacters = 
@@ -36,7 +36,7 @@ const SearchName = ({ name, setName }: SearchNameProps) => {
 
                 <ComboboxInput 
                     className={styles.comboboxInput} 
-                    placeholder='Filter by name...'
+                    placeholder={placeholder}
                     displayValue={(name: string) => name}
                     onChange={(e) => setQuery(e.target.value)}
                 />

@@ -14,6 +14,13 @@
     align-items: center;
 }
 
+.pageImage {
+    @include mobile {
+        width: 312px;
+        height: 104px;
+    }
+}
+
 
 // Inputs
 
@@ -26,6 +33,10 @@
 
     @include tablet {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 540px) {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -40,14 +51,23 @@
 // Cards
 
 .cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    margin: 0 auto;
-    gap: 20px 20px;
+    justify-content: center;
+    gap: 20px;
     padding: 61px 0px 44px;
 
-    @include tablet {
-        
+    @media screen and (max-width: 1060px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 545px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
     }
 }

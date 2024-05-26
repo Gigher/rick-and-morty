@@ -1,3 +1,21 @@
+export const navLinks = [
+    {
+        label: 'Characters',
+        route: '/'
+    },
+
+    {
+        label: 'Locations',
+        route: '/locations'
+    },
+
+    {
+        label: 'Episodes',
+        route: '/episodes'
+    },
+
+]
+
 export const characters = [
     "Rick Sanchez",
     "Morty Smith",

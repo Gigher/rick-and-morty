@@ -29,10 +29,11 @@ export default async function Home() {
           alt="Illustration"
           width={600}
           height={200}
+          className={styles.pageImage}
         />
 
         <div className={styles.inputsContainer}>
-          <SearchBar />
+          <SearchBar placeholder="Filter by name..." />
 
           <CustomFilter title="Species" options={species} />
 

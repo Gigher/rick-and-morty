@@ -5,7 +5,7 @@ import { useState } from 'react';
 import styles from '../styles/modules/SearchBar.module.scss';
 import SearchName from './SearchName';
 
-const SearchBar = () => {
+const SearchBar = ({ placeholder }) => {
   const [name, setName] = useState('');
 
   const handleSearch = () => {
@@ -13,11 +13,12 @@ const SearchBar = () => {
   }
 
   return (
-    <form className='' onSubmit={handleSearch}>
+    <form onSubmit={handleSearch}>
       <div>
         <SearchName
           name={name}
           setName={setName}
+          placeholder={placeholder}
         />
       </div>
     </form>
