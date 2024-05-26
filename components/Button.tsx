@@ -4,7 +4,7 @@ import { Roboto } from 'next/font/google';
 
 import styles from "../styles/modules/Button.module.scss";
 
-const roboto = Roboto({ weight: ['500'], subsets: ["latin"] });
+const roboto = Roboto({ weight: '500', subsets: ["latin"] });
 
 const Button = ({ title }: ButtonProps) => {
   return (
